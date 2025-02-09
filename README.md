@@ -9,7 +9,7 @@ Bu dökümantasyon, Pipe Network Node'u kurma ve yapılandırma sürecini adım 
 ## Adım 1: Güncellemeleri Yükleyelim
 Aşağıdaki komutlarla sisteminizi güncelleyip gerekli paketleri yükleyebilirsiniz:
 
-```bash
+``
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang aria2 bsdmainutils ncdu unzip libleveldb-dev -y
 
@@ -24,48 +24,48 @@ cd /root/pipenetwork
 Node için gerekli dizinleri oluşturun:
 
 
-`mkdir -p /root/pipenetwork
-`mkdir -p /root/pipenetwork/download_cache
-`cd /root/pipenetwork
+mkdir -p /root/pipenetwork
+mkdir -p /root/pipenetwork/download_cache
+cd /root/pipenetwork
 
 
 
 3. Port Açma
 Pipe Network ile iletişim için gerekli portu açın:
 
-`ufw allow 8003/tcp
+ufw allow 8003/tcp
 
 
 
 4. Pipe Network Dosyasının İndirilmesi
 Eğer Pipe Network'den bir waitlist maili aldıysanız, maildeki URL ile pop dosyasını indirin:
 
-`curl -L -o pop "<URL_FROM_EMAIL>"
+curl -L -o pop "<URL_FROM_EMAIL>"
 
 Mail almadıysanız, alternatif olarak aşağıdaki komutla dosyayı indirin:
 
-`wget -O pop "https://dl.pipecdn.app/v0.2.4/pop"
+wget -O pop "https://dl.pipecdn.app/v0.2.4/pop"
 
 
 
 5. Dosyanın Çalıştırılabilir Hale Getirilmesi
 pop dosyasını çalıştırılabilir yapmak için aşağıdaki komutu kullanın:
 
-`chmod +x pop
+chmod +x pop
 
 
 
 6. Kaydolma ve Devam Etme
 Pipe Network’e kaydolmak için aşağıdaki komutu çalıştırın. Referral linkinizi kullanarak kaydolduğunuzdan emin olun:
 
-`./pop --signup-by-referral-route bd5a975847962ddf
+./pop --signup-by-referral-route bd5a975847962ddf
 
 
 
 7. pipe-pop Servisinin Yapılandırılması
 Bir servis dosyası oluşturun ve nano ile düzenleyin:
 
-`nano /etc/systemd/system/pipe-pop.service
+nano /etc/systemd/system/pipe-pop.service
 
 Aşağıdaki örnek yapılandırmayı kendi sisteminize göre ayarlayın:
 
@@ -96,7 +96,7 @@ WantedBy=multi-user.target
 8. Systemd Yeniden Yüklenmesi ve Servisin Başlatılması
 Servisi yeniden yükleyin ve başlatın:
 
-```sudo systemctl daemon-reload
+sudo systemctl daemon-reload
 sudo systemctl enable pipe-pop
 sudo systemctl start pipe-pop
 
@@ -105,7 +105,7 @@ sudo systemctl start pipe-pop
 9. Servisin Durumunun Kontrol Edilmesi
 Servisin düzgün çalışıp çalışmadığını kontrol edin:
 
-`sudo systemctl status pipe-pop
+sudo systemctl status pipe-pop
 
 
 
