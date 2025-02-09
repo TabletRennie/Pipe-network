@@ -1,14 +1,24 @@
-##Sistem Gereksinimleri
-RAM: Minimum 4GB, daha yüksek değerler önerilir.
-Disk Alanı: En az 100GB, 200-500GB önerilir.
+# Pipe Network Kurulum ve Yapılandırma Rehberi
 
+Bu dökümantasyon, Pipe Network Node'u kurma ve yapılandırma sürecini adım adım açıklamaktadır. Aşağıdaki adımları izleyerek sisteminizi hazırlayabilir ve Pipe POP Node'unu başlatabilirsiniz.
 
+## Sistem Gereksinimleri
+- **RAM**: Minimum 4GB, daha yüksek değerler önerilir.
+- **Disk Alanı**: Minimum 100GB, 200-500GB önerilir.
 
-1. Sistem Güncellemeleri ve Gerekli Paketlerin Yüklenmesi
-Öncelikle, sistemdeki tüm paketleri güncelleyin ve gerekli bağımlılıkları yükleyin:
+## Adım 1: Güncellemeleri Yükleyelim
+Aşağıdaki komutlarla sisteminizi güncelleyip gerekli paketleri yükleyebilirsiniz:
 
-`sudo apt update && sudo apt upgrade -y
-`sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang aria2 bsdmainutils ncdu unzip libleveldb-dev -y
+```bash
+sudo apt update && sudo apt upgrade -y
+sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang aria2 bsdmainutils ncdu unzip libleveldb-dev -y
+
+2. Dizinleri Oluşturalım
+
+mkdir -p /root/pipenetwork
+mkdir -p /root/pipenetwork/download_cache
+cd /root/pipenetwork
+
 
 3. Dizinlerin Oluşturulması
 Node için gerekli dizinleri oluşturun:
