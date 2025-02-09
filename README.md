@@ -13,6 +13,7 @@ sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano aut
 3. Dizinlerin Oluşturulması
 Node için gerekli dizinleri oluşturun:
 
+```bash
 mkdir -p /root/pipenetwork
 mkdir -p /root/pipenetwork/download_cache
 cd /root/pipenetwork
