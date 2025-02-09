@@ -1,4 +1,4 @@
-Sistem Gereksinimleri
+##Sistem Gereksinimleri
 RAM: Minimum 4GB, daha yüksek değerler önerilir.
 Disk Alanı: En az 100GB, 200-500GB önerilir.
 
