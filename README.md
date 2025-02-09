@@ -9,7 +9,7 @@ Bu dökümantasyon, Pipe Network Node'u kurma ve yapılandırma sürecini adım 
 ## Adım 1: Güncellemeleri Yükleyelim
 Aşağıdaki komutlarla sisteminizi güncelleyip gerekli paketleri yükleyebilirsiniz:
 
-``
+
 sudo apt update && sudo apt upgrade -y
 sudo apt install curl iptables build-essential git wget lz4 jq make gcc nano automake autoconf tmux htop nvme-cli pkg-config libssl-dev libleveldb-dev tar clang aria2 bsdmainutils ncdu unzip libleveldb-dev -y
 
